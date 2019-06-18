@@ -2,6 +2,8 @@
 
 $silver: #D1DDE5;
 $bg: #F57E15;
+$input_margin: 5px 0;
+$input_padding: 5px 10px;
 
 @mixin flex {
   display: flex;
@@ -21,9 +23,26 @@ section {
   align-items: center;
 }
 
-form {
+.form {
   @include flex();
   max-width: 400px;
+
+  >input {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, .3);
+    margin: $input_margin;
+    padding: $input_padding;
+  }
+
+  >button {
+    border-radius: 10px;
+    margin: 10px auto;
+    border: 2px solid white;
+    padding: 4px 10px;
+    background: $bg;
+    color: white;
+  }
 }
 
 .frame {
@@ -52,10 +71,6 @@ form {
   padding-top: 80px;
   cursor: pointer;
 
-  &:hover .ring {
-    transform: rotate(360deg) translate3d(0, 0, 0);
-  }
-
   .hanger {
     position: absolute;
     width: 120px;
@@ -68,6 +83,7 @@ form {
       inset 4px 4px 1px 0 rgba(255, 255, 255, .8),
       inset -3px -2px 1px 0 rgba(0, 0, 0, .3),
       4px 8px 12px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 1s ease-in;
 
     .inside {
       position: absolute;
@@ -176,4 +192,19 @@ form {
 
   }
 
+}
+
+@keyframes unlock {
+
+  0%,
+  40%,
+  80% {
+    transform: rotateZ(180deg);
+  }
+
+  20%,
+  60%,
+  100% {
+    transform: rotateZ(-180deg);
+  }
 }

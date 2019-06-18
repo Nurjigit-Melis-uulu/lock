@@ -18,7 +18,7 @@ section {
   -ms-flex-align: center;
   align-items: center; }
 
-form {
+.form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,6 +27,20 @@ form {
   -ms-flex-flow: column;
   flex-flow: column;
   max-width: 400px; }
+  .form > input {
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.3);
+    margin: 5px 0;
+    padding: 5px 10px; }
+  .form > button {
+    border-radius: 10px;
+    margin: 10px auto;
+    border: 2px solid white;
+    padding: 4px 10px;
+    background: #F57E15;
+    color: white; }
 
 .frame {
   display: -webkit-box;
@@ -56,9 +70,6 @@ form {
   left: 0px;
   padding-top: 80px;
   cursor: pointer; }
-  .lock:hover .ring {
-    -webkit-transform: rotate(360deg) translate3d(0, 0, 0);
-    transform: rotate(360deg) translate3d(0, 0, 0); }
   .lock .hanger {
     position: absolute;
     width: 120px;
@@ -68,7 +79,12 @@ form {
     border-radius: 60px 60px 0 0;
     background: #D1DDE5;
     -webkit-box-shadow: inset 4px 4px 1px 0 rgba(255, 255, 255, 0.8), inset -3px -2px 1px 0 rgba(0, 0, 0, 0.3), 4px 8px 12px 0 rgba(0, 0, 0, 0.2);
-    box-shadow: inset 4px 4px 1px 0 rgba(255, 255, 255, 0.8), inset -3px -2px 1px 0 rgba(0, 0, 0, 0.3), 4px 8px 12px 0 rgba(0, 0, 0, 0.2); }
+    box-shadow: inset 4px 4px 1px 0 rgba(255, 255, 255, 0.8), inset -3px -2px 1px 0 rgba(0, 0, 0, 0.3), 4px 8px 12px 0 rgba(0, 0, 0, 0.2);
+    -webkit-transition: -webkit-transform 1s ease-in;
+    transition: -webkit-transform 1s ease-in;
+    -o-transition: transform 1s ease-in;
+    transition: transform 1s ease-in;
+    transition: transform 1s ease-in, -webkit-transform 1s ease-in; }
     .lock .hanger .inside {
       position: absolute;
       width: 100px;
@@ -483,3 +499,27 @@ form {
       border-radius: 50%;
       -webkit-box-shadow: inset 2px 4px 1px 0 rgba(255, 255, 255, 0.8), inset -1px -2px 1px 0 rgba(0, 0, 0, 0.2);
       box-shadow: inset 2px 4px 1px 0 rgba(255, 255, 255, 0.8), inset -1px -2px 1px 0 rgba(0, 0, 0, 0.2); }
+
+@-webkit-keyframes unlock {
+  0%,
+  40%,
+  80% {
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg); }
+  20%,
+  60%,
+  100% {
+    -webkit-transform: rotateZ(-180deg);
+    transform: rotateZ(-180deg); } }
+
+@keyframes unlock {
+  0%,
+  40%,
+  80% {
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg); }
+  20%,
+  60%,
+  100% {
+    -webkit-transform: rotateZ(-180deg);
+    transform: rotateZ(-180deg); } }
