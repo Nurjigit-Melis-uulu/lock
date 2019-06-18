@@ -196,14 +196,26 @@ section {
 
 @keyframes unlock {
 
-  0%,
-  40%,
-  80% {
+  0% {
+    transform: rotateZ(45deg);
+  }
+
+  40% {
     transform: rotateZ(180deg);
   }
 
-  20%,
-  60%,
+  80% {
+    transform: rotateZ(-90deg);
+  }
+
+  20% {
+    transform: rotateZ(225deg);
+  }
+
+  60% {
+    transform: rotateZ(-45deg);
+  }
+
   100% {
     transform: rotateZ(-180deg);
   }
